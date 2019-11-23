@@ -1,11 +1,9 @@
-class ErrorDescription {
-  constructor(httpStatusCode, message, devMessage) {
+class ErrorDescription extends Error {
+  constructor(httpStatusCode, message, context) {
+    super(message);
     this.httpStatusCode = httpStatusCode;
-    this.message = message;
-    this.devMessage = devMessage;
-  }
-
-  static SERVER_ERROR() {
-    return 'Internal server error';
+    this.context = context || {};
   }
 }
+
+module.exports = ErrorDescription;

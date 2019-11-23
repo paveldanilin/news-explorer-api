@@ -1,9 +1,8 @@
-const BaseError = require('./base-error');
+const ErrorDescription = require('./error-description');
 
-class PermissionDenied extends BaseError {
-  constructor({message = 'Access to the resource is denied', details = {}}) {
-    const statusCode = 403;
-    super({message, statusCode, details});
+class PermissionDenied extends ErrorDescription {
+  constructor(user, message = 'Access denied [{{user}}]') {
+    super(403, message, { user });
   }
 }
 

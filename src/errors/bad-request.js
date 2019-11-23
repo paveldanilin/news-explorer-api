@@ -1,9 +1,8 @@
-const BaseError = require('./base-error');
+const ErrorDescription = require('./error-description');
 
-class BadRequest extends BaseError {
-  constructor({message = 'Bad request', details = {}}) {
-    const statusCode = 400;
-    super({message, statusCode, details});
+class BadRequest extends ErrorDescription {
+  constructor(context = {}, message = 'Bad request') {
+    super(400, message, context);
   }
 }
 

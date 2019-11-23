@@ -1,9 +1,8 @@
-const BaseError = require('./base-error');
+const ErrorDescription = require('./error-description');
 
-class NotFound extends BaseError {
-  constructor({message = 'The requested resource not found', details = {}}) {
-    const statusCode = 404;
-    super({message, statusCode, details});
+class NotFound extends ErrorDescription {
+  constructor(resource, message = 'The requested resource not found [{{resource}}]') {
+    super(404, message, { resource });
   }
 }
 

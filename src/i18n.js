@@ -10,7 +10,17 @@ function translate(phrase, context) {
   return i18n.__(phrase, context);
 }
 
+function getLocale() {
+  return i18n.getLocale();
+}
+
+function setLocale(locale) {
+  i18n.setLocale(locale);
+}
+
 module.exports = {
   init: i18n.init,
+  getLocale,
+  setLocale,
   translate,
 };

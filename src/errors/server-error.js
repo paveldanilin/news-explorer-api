@@ -1,9 +1,8 @@
-const BaseError = require('./base-error');
+const ErrorDescription = require('./error-description');
 
-class ServerError extends BaseError {
-  constructor({message = 'Internal server error', details = {}}) {
-    const statusCode = 500;
-    super({message, statusCode, details});
+class ServerError extends ErrorDescription {
+  constructor(context, message = 'Internal server error') {
+    super(500, message, context);
   }
 }
 

@@ -1,0 +1,6 @@
+{
+  "User is not authorized {{user}}": "User is not authorized {{user}}",
+  "Wrong email or password": "Wrong email or password",
+  "Resource not found {{resource}}": "Resource not found {{resource}}",
+  "Internal server error": "Internal server error"
+}

@@ -1,0 +1,6 @@
+{
+  "User is not authorized {{user}}": "Пользователь не авторизован {{user}}",
+  "Wrong email or password": "Неправильные почта или пароль",
+  "Resource not found {{resource}}": "Запрошенный ресурс не найден {{resource}}",
+  "Internal server error": "Внутренняя ошибка сервера"
+}

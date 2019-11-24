@@ -10,6 +10,7 @@ const config = require('./config');
 const locale = require('./i18n');
 const { requestLogger, errorLogger, commonLogger } = require('./logger');
 const requestId = require('./middlewares/request-id');
+const errorHandler = require('./middlewares/error-handler');
 const BaseError = require('./errors/base-error');
 const db = require('./db');
 const loginRouter = require('./routes/login');
@@ -33,17 +34,7 @@ server.use(articlesRouter);
 
 server.use(errors());
 server.use('*', (req) => BaseError.NotFound(req.originalUrl));
-// eslint-disable-next-line no-unused-vars
-server.use((err, req, res, next) => {
-  const {
-    httpStatusCode = 500,
-    message = 'Internal server error',
-    devMessage = err.stack || null,
-  } = err;
-  const userMessage = locale.translate(message, err.context || {});
-  errorLogger.error({ requestId: req.requestId, message: userMessage, devMessage });
-  res.status(httpStatusCode).send({ message: userMessage });
-});
+server.use(errorHandler);
 
 const app = server.listen(config.SERVER_PORT, async () => {
   try {

@@ -25,7 +25,5 @@
 	"commonLogger.debug is not a function": "commonLogger.debug is not a function",
 	"Value is not an url {{value}}": "Value is not an url {{value}}",
 	"Article has been deleted": "Article has been deleted",
-	"Could not delete article {{reason}}": "Could not delete article {{reason}}",
-	"Unexpected token } in JSON at position 206": "Unexpected token } in JSON at position 206",
-	"Unexpected string in JSON at position 67": "Unexpected string in JSON at position 67"
+	"Could not delete article {{reason}}": "Could not delete article {{reason}}"
 }
